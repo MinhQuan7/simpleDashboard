@@ -1,0 +1,413 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.header {
+    background-color:#339966;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    
+}
+
+
+.header-box {
+    background-color: #339966; /* Màu nền của tiêu đề */
+    padding: 10px;
+    text-align: center;
+    color: white;
+    /* font-weight: bold; */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.pv-text {
+    background-color: #67BF7F;
+}
+.discharge-text {
+    background-color: #F5B16D;
+}
+.charge-header {
+    background-color:#99D1D3;
+}
+.grid-header {
+    background-color:#D2A6C7;
+}
+
+/* Phần nội dung và icon nằm bên dưới tiêu đề */
+.energy-block {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    transition: transform 0.3s, box-shadow 0.3s;
+} 
+
+.energy-block:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+.energy-content {
+    flex: 1;
+    text-align: center; /* Căn giữa nội dung */
+    font-size: large;
+    font-family: 'Roboto', sans-serif;
+}
+
+.energy-icon {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.energy-icon img {
+    width: 70px; /* Kích thước icon */
+    height: 70px;
+}
+.name-company {
+    font-size: large;
+}
+
+.energy-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 20px;
+}
+
+.energy-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.energy-content {
+    flex: 1;
+}
+
+.energy-icon {
+    flex: 0;
+    padding-left: 10px;
+}
+
+.energy-block {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.energy-icon img {
+    width: 70px; /* Điều chỉnh kích thước icon */
+    height: 70px;
+}
+
+.pv-energy { background-color: #ffffff; }
+.discharge-energy { background-color: #ffffff; }
+.charge-energy  { background-color:#ffffff; } /* Thay màu nền cho năng lượng đẩy lưới */
+.grid-energy { background-color: #ffffff; }
+.consumption-energy { background-color: #ffffff; }  
+
+
+
+
+.energy-diagram {
+    background-color: white;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.additional-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.info-block {
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.quick-charge {
+    background-color:#339966;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.quick-charge:hover {
+    background-color: tomato;
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+.container {
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    position: relative;
+}
+
+/* Solar Panel Section */
+.solar-section {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* Battery Section */
+.battery-section {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+}
+
+.battery-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+/* Inverter Section */
+.inverter-section {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.cabinet {
+    width: 120px;
+    height: 120px;
+}
+
+/* Status Section */
+.status-section {
+    position: absolute;
+    top: 260px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+}
+
+/* Grid Section */
+.grid-section {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    text-align: right;
+}
+
+.grid-icon {
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+
+/* Consumption Section */
+.consumption-section {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    text-align: right;
+}
+
+.consumption-icon {
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+
+/* Timestamp Section */
+.timestamp {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #666;
+}
+
+/* Icon Placeholders */
+.icon {
+    background: #e0e0e0;
+    border: 1px dashed #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Text Styles */
+.value {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.label {
+    font-size: 17px;
+    color: #000000;
+}
+
+.status {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #4CAF50;
+    border-radius: 50%;
+}
+
+/* Connection Lines */
+.connection-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.line {
+    position: absolute;
+    height: 4px; /* Chiều cao của đường line */
+    background-color: transparent; /* Đặt màu nền thành trong suốt */
+}
+
+.line-vertical {
+    position: absolute; /* Đảm bảo vị trí là tuyệt đối */
+    width: 4px; /* Độ rộng của đường thẳng */
+    height: 100%; /* Chiều cao đầy đủ */
+    top: 40px; /* Vị trí từ trên xuống */
+    left: 50%; /* Vị trí từ trái sang phải (có thể điều chỉnh) */
+}
+.line-arrow {
+    background-image: linear-gradient(90deg, #ff8521 50%, transparent 50%);
+    background-size: 25px 100%; /* Kích thước của mũi tên */
+    animation: moveArrow 3s linear infinite; /* Thêm animation */
+}
+
+@keyframes moveArrow {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+/* Specific line positions */
+.line-left {
+    left: 100px;
+    top: 190px;
+    width: 250px;
+}
+
+.line-right {
+    right: 100px;
+    top: 190px;
+    width: 250px;
+}
+
+.line-status {
+    left: 50%;
+    top: 210px;
+    height: 53px;
+    transform: translateX(-50%);
+}
+/* Đường line từ PV tới status-section */
+.line-pv-to-status {
+    top: 50px; /* Điều chỉnh vị trí theo yêu cầu */
+    left: 190px; /* Điều chỉnh vị trí theo yêu cầu */
+    width: 210px; /* Điều chỉnh độ dài theo yêu cầu */
+}
+.line-pv-to-status-vertical {
+    top: 50px; /* Điều chỉnh vị trí theo yêu cầu */
+    left: 400px; /* Điều chỉnh vị trí theo yêu cầu */
+    height: 200px; /* Điều chỉnh độ dài theo yêu cầu */
+}
+
+
+/*Vertical*/
+.line-arrow-vertical {
+    position: absolute; /* Đảm bảo vị trí là tuyệt đối */
+    width: 4px; /* Độ rộng của đường thẳng */
+    height: 55px; /* Chiều cao đầy đủ */
+    background-image: linear-gradient(0deg, #ff8521 50%, transparent 50%);
+    background-size: 25px 100%; /* Kích thước của mũi tên */
+    animation: moveArrow-vertical 3s linear infinite; /* Thêm animation */
+    left: 50%; /* Vị trí từ trái sang phải (có thể điều chỉnh) */
+}
+
+@keyframes moveArrow-vertical {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%; /* Di chuyển từ trên xuống dưới */
+    }
+}
+
+/* Tạo hình dạng mũi tên ở đầu đường thẳng */
+.line-arrow-vertical::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 10px;
+    border-left: 5px solid transparent; /* Mũi tên bên trái */
+    border-right: 5px solid transparent; /* Mũi tên bên phải */
+    border-bottom: 10px solid #ff8521; /* Màu sắc của mũi tên */
+    top: -5px; /* Đặt vị trí của mũi tên ở đầu đường line */
+    left: -1px; /* Căn giữa mũi tên với đường line */
+}
+
+/*____Clock Realtime______*/
+.clock-container {
+    position: absolute; /* Định vị tương đối với section cha */
+    left: 10px;        /* Cách lề trái 10px */
+    bottom: 10px;      /* Cách lề dưới 10px */
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.clock {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}

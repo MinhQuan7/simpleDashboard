@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assest/styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="name-company">E-Ra IoT Platform</div>
+        <div class="device-number">Since by 2021</div>
+    </header>
+
+
+    <!-- Năng lượng blocks -->
+    <section class="energy-section">
+        <div class="energy-block pv-energy">
+            <div class="header-box pv-text">
+                <h3>Năng lượng PV</h3>
+            </div>
+            <div class="energy-content">
+                <p>Sản lượng hôm nay</p>
+                <h3>20.2 kWh</h3>
+                <p>Sản lượng tổng</p>
+                <h3>2671.2 kWh</h3>
+            </div>
+            <div class="energy-icon">
+                <img src="assest/img/power.png" alt="PV Icon">
+            </div>
+        </div>
+        <div class="energy-block discharge-energy">
+            <div class="header-box discharge-text">
+                <h3>Năng lượng xả</h3>
+            </div>
+            <div class="energy-content">
+                <p>Xả hôm nay</p>
+                <h3>2 kWh</h3>
+                <p>Xả tổng</p>
+                <h3>1054.4 kWh</h3>
+            </div>
+            <div class="energy-icon">
+                <img src="assest/img/powerloss.png" alt="Discharge Icon">
+            </div>
+        </div>
+
+        <div class="energy-block charge-energy">
+            <div class="header-box charge-header">
+                <h3>Năng lượng đầy lưới</h3>
+            </div>
+            <div class="energy-content">
+                <p>Đẩy lưới hôm nay</p>
+                <h3>0 kWh</h3>
+                <p>Đẩy lưới tổng</p>
+                <h3>0 kWh</h3>
+            </div>
+            <div class="energy-icon">
+                <img src="assest/img/solar.png" alt="">
+            </div>
+        </div>
+
+        <div class="energy-block grid-energy">
+            <div class="header-box grid-header">
+                <h3>Năng lượng tiêu thụ</h3>
+            </div>
+            <div class="energy-content">
+                <p>Tiêu thụ hôm nay</p>
+                <h3>12.6 kWh</h3>
+                <p>Tiêu thụ tổng</p>
+                <h3>3580.2 kWh</h3>
+            </div>
+            <div class="energy-icon">
+                <img src="assest/img/onoff.png" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Sơ đồ năng lượng -->
+    <section class="energy-diagram">
+        <!-- Icons và hình ảnh sẽ được chèn tại đây -->
+        <div class="container">
+            <!-- Solar Panel -->
+            <div class="solar-section">
+                <img src="assest/img/stationTrans.png" alt="stationTrans">
+                <div>
+                    <div class="value">7202W</div>
+                    <div class="label">Công suất PV</div>
+                </div>
+            </div>
+
+            <!-- Battery -->
+            <div class="battery-section">
+                <img src="assest/img/weatherStation.png" alt="weatherStation">
+                <div class="value">5733W</div>
+                <div class="label">Công suất sạc</div>
+                <div class="value">55.2Vdc</div>
+                <div class="label">87% Dung lượng ắc quy</div>
+            </div>
+
+            <!-- Status -->
+            <div class="status">
+                <div class="status-dot"></div>
+                <span>Normal</span>
+            </div>
+
+            <!-- Inverter -->
+            <div class="inverter-section">
+                <img src="assest/img/cabinet.png" alt="cabinet">
+            </div>
+
+            <!-- Status Text -->
+            <div class="status-section">
+                <div class="value">Trạm trung truyển </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid-section">
+                <img src="assest/img/home.png" alt="homePower">
+                <div class="value">219.9Vac</div>
+                <div class="label">50.18Hz</div>
+                <div class="value">0W</div>
+            </div>
+
+            <!-- Consumption -->
+            <div class="consumption-section">
+                <img src="assest/img/iphone.png" alt="">
+                <div class="value">1273W</div>
+                <div class="label">Tiêu thụ</div>
+            </div>
+
+            <!-- Timestamp -->
+            <div class="clock-container">
+                <div class="clock" id="clock"></div>
+            </div>
+
+            <!-- Connection Lines -->
+            <div class="connection-lines">
+                <!-- Left side connection -->
+                <div class="line line-horizontal line-arrow  line-left"></div>
+                <!-- Right side connection -->
+                <div class="line line-horizontal line-dashed line-right line-arrow "></div>
+                <!-- Status line -->
+                <div class="line line-vertical line-status line-arrow-vertical "></div>
+                <!-- Đường line -->
+                <div class="line line-horizontal line-pv-to-status line-arrow "></div>
+                <!-- Đường line dọc xuống Trạm trung tuyên -->
+                <div class="line line-vertical line-pv-to-status-vertical line-arrow-vertical"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thông tin bổ sung -->
+    <section class="additional-info">
+        <button class="quick-charge">Start Quick Charge</button>
+        <div class="info-block">6kW Power rating</div>
+        <div class="info-block">Firmware version: cbaa-181B18</div>
+        <div class="info-block">Batt Parallel Num: 0</div>
+        <div class="info-block">Batt Capacity: 100Ah</div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
