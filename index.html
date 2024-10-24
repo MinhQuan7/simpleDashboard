@@ -7,6 +7,12 @@
     <title>Energy Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assest/styles.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 </head>
 
 <body>
@@ -52,7 +58,7 @@
                 <!-- Hàng 2 -->
                 <div class="energy-block charge-energy">
                     <div class="header-box charge-header">
-                        <h3>Năng lượng đẩy lưới</h3>
+                        <h3>Năng lượng đầy lưới</h3>
                     </div>
                     <div class="energy-content">
                         <p>Đẩy lưới hôm nay</p>
@@ -97,22 +103,92 @@
 
             <div class="inverter-temp box-style">
                 <h3>Nhiệt độ Inverter</h3>
-                <!-- Thêm nội dung nhiệt độ -->
+                <div class="bar-container">
+                    <div class="bar-row">
+                        <div class="bar" style="background-color: rgba(124, 241, 159, 0.521); width: 100%">
+                            <div class="bar" style="background-color: rgba(42, 148, 51, 0.74); width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar" style="background-color: rgba(248, 194, 43, 0.2); width: 100%;">
+                            <div class="bar" style="background-color: rgba(255, 166, 0, 0.781); width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="bar-row">
+
+                        <div class="bar" style="background-color:rgba(18, 18, 19, 0.3); width: 30%;">
+                        </div>
+                        <div class="btnes">
+                            <button class="btnin"></button>
+                        </div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar" style="background-color:rgba(18, 18, 19, 0.3); width: 80%;">
+                            <span>80%</span>
+                        </div>
+                        <div class="btnes">
+                            <button class="btnin"></button>
+                        </div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar" style="background-color:rgba(18, 18, 19, 0.3); width: 60%;">
+                            <span>60%</span>
+                        </div>
+                        <div class="btnes">
+                            <button class="btnin"></button>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </section>
         <section class="right-column">
             <div class="gauge-grid">
-                <div class="gauge box-style">
-                    <!-- PV Gauge -->
+                <div class="gauge box-style pv-gauge">
+                    <div class="gauge-display">
+                        <div class="box">
+                            <div class="circle" data-dots="100" data-percent="70" style="--bgColor: #0f0"></div>
+                            <div class="gauge-text">
+                                <h2>70%</h2>
+                                <small>CORE</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="gauge box-style">
-                    <!-- Grid Gauge -->
+                <div class="gauge box-style grid-gauge">
+                    <div class="gauge-display">
+                        <div class="box">
+                            <div class="circle" data-dots="100" data-percent="90" style="--bgColor: #ff0070"></div>
+                            <div class="gauge-text">
+                                <h2>90%</h2>
+                                <small>CPU</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="gauge box-style">
-                    <!-- Battery Gauge -->
+                <div class="gauge box-style battery-gauge">
+                    <div class="gauge-display">
+                        <div class="box">
+                            <div class="circle" data-dots="100" data-percent="60" style="--bgColor: #52a8ff"></div>
+                            <div class="gauge-text">
+                                <h2>60%</h2>
+                                <small>MEMORY</small>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="gauge box-style">
-                    <!-- Load Gauge -->
+                <div class="gauge box-style load-gauge">
+                    <div class="gauge-display">
+                        <div class="box">
+                            <div class="circle" data-dots="100" data-percent="85" style="--bgColor: #ECAB53"></div>
+                            <div class="gauge-text">
+                                <h2>85%</h2>
+                                <small>RAM</small>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </section>

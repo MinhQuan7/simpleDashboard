@@ -64,12 +64,25 @@ body {
 
 
 
-.pv-energy { background-color: #ffffff; }
+.pv-energy { background-color: #000000; }
 .discharge-energy { background-color: #ffffff; }
 .charge-energy  { background-color:#ffffff; } /* Thay màu nền cho năng lượng đẩy lưới */
 .grid-energy { background-color: #ffffff; }
 .consumption-energy { background-color: #ffffff; }  
 
+.pv-text {
+    background-color: #00CD66;
+}
+
+.discharge-text {
+    background-color: #CD9B1D ;
+}
+.charge-header {
+    background-color: #CD69C9;
+}
+.grid-header {
+    background-color: #7AC5CD;
+}
 .energy-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Hiển thị 2 cột */
@@ -104,12 +117,14 @@ body {
 }
 
 .energy-diagram {
-    background: rgba(0, 0, 0, 0.2); /* Nền bán trong suốt cho diagram */
+    background:rgba(255, 255, 255, 0.1); /* Nền bán trong suốt cho diagram */
     margin: 20px 0;
     padding: 20px;
     border-radius: 12px;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    justify-items: center;
 }
 
 .additional-info {
@@ -189,7 +204,8 @@ body {
 .pv-forecast {
     display: flex;
     flex-direction: column; /* Đặt nội dung theo chiều dọc */
-    padding-left: 20px;
+    padding-left: 40px;
+    height: 100px;
     border: 1px solid #ccc;
     border-radius: 40px;
     background-color: #458B74; /* Màu nền cho phần Dự báo PV */
@@ -214,13 +230,117 @@ body {
 .forecast-item img {
     width: 60px;
     height: auto;
-    border-radius: 5px;
+    margin-bottom: -20px;
 }
-
+.pv-forecast h3 {
+    width: 100px;
+}
 .inverter-temp {
     flex: 1;
 }
 
+/*Middle Column*/
+.inverter-temp {
+    padding: 20px;
+    background-color:rgba(255, 255, 255, 0.1);
+    color: white; /* Màu chữ */
+    border-radius: 10px;
+
+}
+
+.bar-container {
+    display: flex;
+    flex-direction: column; /* Sắp xếp các hàng theo chiều dọc */
+}
+
+.bar-row {
+    display: flex;
+    align-items: center; /* Căn giữa thanh và nút nhấn */
+    margin-bottom: 10px; /* Khoảng cách giữa các hàng */
+}
+
+.bar {
+    width: 100%; /* Chiều rộng của thanh */
+    height: 40px; /* Chiều cao của thanh */
+    border-radius: 30px; /*Bo góc cho thanh */
+    position: relative; /* Để đặt phần trăm bên trong */
+    overflow: hidden; /* Đảm bảo phần trăm không ra ngoài thanh */
+}
+
+.bar span {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); /* Căn giữa phần trăm */
+    justify-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255); /* Màu chữ phần trăm */
+}
+
+.btnes {
+      margin-left: auto;
+      background-color: #808080;
+      width: 60px;
+      height: 30px;
+      border: 1px solid #808080;
+      border-radius: 22px;
+      transition:ease-in-out 0.2s;
+    }
+    
+    .btnin {
+      border: 1px solid white;
+      border-radius: 50%;
+      background-color: white;
+      width: 30px;
+      height: 30px;
+      margin-right: 50px;
+      transition:ease-in-out 0.2s;
+    }
+ 
+    .btnes:hover {
+      background-color: #32CD32;
+      width: 60px;
+      height: 30px;
+      border: 1px solid #808080;
+      border-radius: 22px;
+    }
+
+    .btnes:hover .btnin {
+      border: 1px solid white;
+      border-radius: 50%;
+      background-color: white;
+      width: 30px;
+      height: 30px;
+      margin-left: 30px;
+    }
+
+    progress-bar {
+	position: relative;
+	width: 500px;
+	height: 3em;
+	background-color: #111;
+	border-radius: 1.5em;
+	color: white;
+}
+
+.progress-bar::before {
+	content: attr(data-label);
+	display: flex;
+	align-items: center;
+	position: absolute;
+	left: .5em;
+	top: .5em;
+	bottom: .5em;
+	width: calc(var(--width, 0) * 1%);
+	min-width: 2rem;
+	max-width: calc(100% - 1em);
+	background-color: rgb(14, 187, 106);
+	border-radius: 1em;
+	padding: 1em;
+}
+
+
+
+/*_______End Middle Column___________*/
 /* Right Column */
 .right-column {
     display: flex;
@@ -241,13 +361,139 @@ body {
     justify-content: center;
 }
 
+.skill {
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+.outer {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  /* border: 1px solid cornflowerblue; */
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  padding: 20px;
+}
+
+.inner {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  /* border: 1px solid cornflowerblue; */
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0 rgba(255, 255, 255, 1), 0.5px 0.5px 0 rgba(0, 0, 0, 0.15),
+    0px 12px 10px -10 rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#number {
+  font-weight: 600;
+  color: #555;
+}
+
+circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  /* animation: anim 2s ease forwards; */
+}
+
+@keyframes anim {
+  100% {
+    stroke-dashoffset: 165.2;
+  }
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+h4 {
+    margin-bottom: 15px; /* Space below the title */
+}
+
+box
+{
+    position: relative;
+    margin: 50px;
+}
+.box .gauge-text
+{
+    position: relative;
+    /* top: 50%;
+    left: 50%; */
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #fff;
+}
+.box .gauge-text h2
+{
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+.box .gauge-text small
+{
+    font-size: 18px;
+    display: block;
+}
+
+.circle
+{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle .points
+{
+    width: 3px;
+    height: 15px;
+    background: #0007;
+    position: absolute;
+    border-radius: 3px;
+    transform: rotate(calc(var(--i)*var(--rot))) translateY(-100px);
+    
+}
+.points.marked
+{
+    animation: glow 0.04s linear forwards;
+    animation-delay: calc(var(--i)*0.05s);
+}
+
+@keyframes glow
+{
+    0%
+    {
+        background: #0007;
+        box-shadow: none;
+    }
+    100%
+    {
+        background: var(--bgColor);
+        box-shadow: 0 0 10px var(--bgColor);
+    }
+}
+
+
+/*____________End Gauge_____________*/
 /* Giữ nguyên các style cho energy blocks của bạn */
 .energy-block {
-    background: rgba(18, 18, 19, 0.3);
+    background:rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
     border-radius: 12px;
     padding: 15px;
-    box-shadow: 0 8px 16px rgba(233, 223, 218, 0.3);
+    box-shadow: 0 8px 16px rgba(54, 52, 50, 0.1);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
