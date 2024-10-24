@@ -430,6 +430,42 @@ body {
     left: -2px; /* Căn giữa mũi tên với đường line */
 }
 
+/*________Mũi tên từ trên xuống__________*/
+.line-arrow-vertical-bottom {
+    position: absolute; /* Đảm bảo vị trí là tuyệt đối */
+    width: 4px; /* Độ rộng của đường thẳng */
+    height: 85px; /* Chiều cao đầy đủ */
+    background-image: linear-gradient(90deg, #ff8521 50%, transparent 50%);
+    background-size: 25px 100%; /* Kích thước của mũi tên */
+    animation: moveArrow-vertical 3s linear infinite; /* Thêm animation */
+    left: 50%; /* Vị trí từ trái sang phải (có thể điều chỉnh) */
+}
+
+@keyframes moveArrow-vertical-bottom {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%; /* Di chuyển từ trên xuống dưới */
+    }
+}
+
+/* Tạo hình dạng mũi tên ở đầu đường thẳng */
+.line-arrow-vertical-bottom::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 10px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid #ff6804;
+    top: 85px;
+    left: -2px;
+    transform: rotate(180deg); /* Xoay mũi tên 90 độ */
+    /* Có thể thêm transform-origin nếu cần điều chỉnh điểm xoay */
+    transform-origin: center center;
+}
+
 /*____Clock Realtime______*/
 .clock-container {
     position: absolute; /* Định vị tương đối với section cha */
