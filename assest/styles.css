@@ -2,116 +2,67 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('img/blue-gradient.jpg');
+    background-size: cover; /* Điều chỉnh kích thước hình ảnh để bao phủ toàn bộ phần tử */
+    background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+    background-position: center; /* Đặt hình ảnh ở giữa */
 }
 
 .header {
-    background-color:#339966;
-    padding: 30px;
-    display: flex;
-    justify-content: space-between;
+    border-radius: 10px;
+    padding: 20px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background 0.3s ease;
+}
+
+.company-logo {
+    width: 50px; /* điều chỉnh kích thước logo */
+    height: auto; /* giữ tỷ lệ chiều cao */
+    margin-right: 5px; /* khoảng cách giữa logo và chữ */
     
 }
 
-
 .header-box {
-    background-color: #339966; /* Màu nền của tiêu đề */
+    /* background-color: #339966; Màu nền của tiêu đề */
     padding: 10px;
     text-align: center;
     color: white;
+    font-size: 17px;
     /* font-weight: bold; */
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
-.pv-text {
-    background-color: #67BF7F;
-}
-.discharge-text {
-    background-color: #F5B16D;
-}
-.charge-header {
-    background-color:#99D1D3;
-}
-.grid-header {
-    background-color:#D2A6C7;
-}
-
-/* Phần nội dung và icon nằm bên dưới tiêu đề */
-.energy-block {
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column; 
-    transition: transform 0.3s, box-shadow 0.3s;
-} 
 
 .energy-block:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+    transform: translateY(-8px); /* Hiệu ứng hover nổi nhẹ */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Đổ bóng mạnh hơn khi hover */
 }
-
-.energy-content {
-    flex: 1;
-    text-align: center; /* Căn giữa nội dung */
-    font-size: large;
-    font-family: 'Roboto', sans-serif;
-}
-
 .energy-icon {
     padding-top: 10px;
     text-align: center;
+    flex: 0;
 }
 
 .energy-icon img {
-    width: 70px; /* Kích thước icon */
-    height: 70px;
+    width: 60px; /* Kích thước icon */
+    height: 60px;
 }
 .name-company {
-    font-size: large;
+    font-size: 20px;
 }
 
-.energy-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin: 20px;
-}
 
-.energy-block {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.energy-content {
-    flex: 1;
-}
-
-.energy-icon {
-    flex: 0;
-    padding-left: 10px;
-}
-
-.energy-block {
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.energy-icon img {
-    width: 70px; /* Điều chỉnh kích thước icon */
-    height: 70px;
-}
 
 .pv-energy { background-color: #ffffff; }
 .discharge-energy { background-color: #ffffff; }
@@ -119,14 +70,46 @@ body {
 .grid-energy { background-color: #ffffff; }
 .consumption-energy { background-color: #ffffff; }  
 
+.energy-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Hiển thị 2 cột */
+    gap: 20px; /* Khoảng cách giữa các block */
+    padding: 20px;
+}
+
+.energy-block {
+    background: rgba(18, 18, 19, 0.4); /* Nền tối hơn với mức trong suốt */
+    backdrop-filter: blur(15px); /* Hiệu ứng blur mạnh hơn */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(7, 7, 7, 0.3); /* Đổ bóng mềm mại */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.energy-icon img {
+    width: 50px; /* Kích thước biểu tượng */
+    height: 50px;
+    opacity: 0.8; /* Độ mờ để hòa hợp với thiết kế tổng thể */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.energy-icon img:hover {
+    opacity: 1; /* Làm rõ biểu tượng khi hover */
+}
 
 
+.additional-info {
+    padding: 20px;
+    text-align: center;
+}
 
 .energy-diagram {
-    background-color: white;
-    margin: 20px;
-    padding: 15px;
-    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2); /* Nền bán trong suốt cho diagram */
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .additional-info {
@@ -160,11 +143,157 @@ body {
     transform: scale(1.1);
 }
 
+/*________________New Version__________________*/
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    /* background: #1a2234; */
+    color: white;
+}
+
+.box-style {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Left Column */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.weather-widget {
+    height: 200px;
+}
+
+.weather-widget:hover {
+    transform: translateY(-8px); /* Hiệu ứng hover nổi nhẹ */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Đổ bóng mạnh hơn khi hover */
+}
+.forecast-widget {
+    flex: 1;
+}
+
+/* Middle Column */
+.middle-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pv-forecast {
+    display: flex;
+    flex-direction: column; /* Đặt nội dung theo chiều dọc */
+    padding-left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    background-color: #458B74; /* Màu nền cho phần Dự báo PV */
+    color: white; /* Màu chữ */
+}
+
+.forecast-content {
+    display: flex;
+    justify-content: space-between; /* Căn chỉnh nội dung giữa */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.forecast-details {
+    display: flex;
+    flex-direction: column; /* Đặt Hôm nay và 34.26 kWh theo chiều dọc */
+}
+
+.forecast-items {
+    display: flex;
+}
+
+.forecast-item img {
+    width: 60px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.inverter-temp {
+    flex: 1;
+}
+
+/* Right Column */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gauge-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.gauge {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Giữ nguyên các style cho energy blocks của bạn */
+.energy-block {
+    background: rgba(18, 18, 19, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 8px 16px rgba(233, 223, 218, 0.3);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.energy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 cột */
+    grid-template-rows: 1fr 1fr;    /* 2 hàng */
+    gap: 20px;
+    padding: 20px;
+}
+.energy-content {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.energy-content h3 {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.energy-content p {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+
+/* Hover effects */
+.box-style:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 .container {
     width: 800px;
     height: 400px;
     margin: 0 auto;
-    background: white;
     padding: 20px;
     position: relative;
 }
