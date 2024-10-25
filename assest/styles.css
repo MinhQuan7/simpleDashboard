@@ -85,7 +85,7 @@ body {
 }
 .energy-section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Hiển thị 2 cột */
+    grid-template-columns: repeat(2, 1fr); /* Hiển thị 2 cột */
     gap: 20px; /* Khoảng cách giữa các block */
     padding: 20px;
 }
@@ -110,12 +110,6 @@ body {
     opacity: 1; /* Làm rõ biểu tượng khi hover */
 }
 
-
-.additional-info {
-    padding: 20px;
-    text-align: center;
-}
-
 .energy-diagram {
     background:rgba(255, 255, 255, 0.1); /* Nền bán trong suốt cho diagram */
     margin: 20px 0;
@@ -125,24 +119,35 @@ body {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     justify-content: center;
     justify-items: center;
+    width: 840px;
+    height: 464.44px;
 }
 
 .additional-info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    margin: 20px auto;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: fit-content;
 }
 
 .info-block {
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     padding: 10px;
     margin: 5px;
-    width: 100%;
+    width: 300px; /* Fixed width for better alignment */
     text-align: center;
     border-radius: 8px;
 }
 
+.info-block span {
+    color: #000;
+}
+.span {
+   background-color: #000000;
+}
 .quick-charge {
     background-color:#339966;
     color: white;
@@ -160,8 +165,10 @@ body {
 
 /*________________New Version__________________*/
 .dashboard-container {
+    width: 1372.22px;
+    height: 856.65px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     padding: 20px;
     /* background: #1a2234; */
@@ -175,393 +182,9 @@ body {
     margin-bottom: 20px;
 }
 
-/* Left Column */
-.left-column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.weather-widget {
-    height: 200px;
-}
-
-.weather-widget:hover {
-    transform: translateY(-8px); /* Hiệu ứng hover nổi nhẹ */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Đổ bóng mạnh hơn khi hover */
-}
-.forecast-widget {
-    flex: 1;
-}
-
-/* Middle Column */
-.middle-column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.pv-forecast {
-    display: flex;
-    flex-direction: column; /* Đặt nội dung theo chiều dọc */
-    padding-left: 40px;
-    height: 100px;
-    border: 1px solid #ccc;
-    border-radius: 40px;
-    background-color: #458B74; /* Màu nền cho phần Dự báo PV */
-    color: white; /* Màu chữ */
-}
-
-.forecast-content {
-    display: flex;
-    justify-content: space-between; /* Căn chỉnh nội dung giữa */
-    align-items: center; /* Căn giữa theo chiều dọc */
-}
-
-.forecast-details {
-    display: flex;
-    flex-direction: column; /* Đặt Hôm nay và 34.26 kWh theo chiều dọc */
-}
-
-.forecast-items {
-    display: flex;
-}
-
-.forecast-item img {
-    width: 60px;
-    height: auto;
-    margin-bottom: -20px;
-}
-.pv-forecast h3 {
-    width: 100px;
-}
-.inverter-temp {
-    flex: 1;
-}
-
-/*Middle Column*/
-.inverter-temp {
-    padding: 20px;
-    background-color:rgba(255, 255, 255, 0.1);
-    color: white; /* Màu chữ */
-    border-radius: 10px;
-
-}
-.bar-container {
-    display: flex;
-    flex-direction: column; /* Arrange rows vertically */
-}
-
-.bar-row {
-    display: flex;
-    align-items: center; /* Center align bar and icon */
-    margin-bottom: 10px; /* Space between rows */
-}
-
-.bar {
-    position: relative; /* Position for inner elements */
-    width: calc(100% - 34px); /* Full width minus icon space */
-    height: 40px; /* Height of the bar */
-    border-radius: 30px; /* Rounded corners for the bar */
-    overflow: hidden; /* Ensure inner elements stay within bounds */
-}
-
-.icon {
-    position: absolute; /* Position icon absolutely within the bar */
-    left: 10px; /* Adjusted to move it slightly to the right */
-    top: 50%;
-    transform: translateY(-50%); /* Center vertically */
-}
-
-.icon img {
-    width: 30px; /* Set icon size */
-    height: auto; /* Maintain aspect ratio */
-}
-
-.progress {
-    height: 100%; /* Full height of the bar */
-}
-/*_________Bar 3__________*/
-.bar span {
-    position: absolute;
-    left: calc(50% - 12px); /* Center the percentage text */
-    color: rgb(255, 255, 255); /* Text color for percentage */
-}
-
-.control-bar {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    background-color: rgba(18, 18, 19, 0.3);
-    border-radius: 30px;
-    padding: 8px;
-}
-.icon-current {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-}
-
-.icon-current img {
-    width: 100%;
-    height: 100%; 
-    margin-right: 60px;
-    object-fit: contain;
-}
-.control-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main-bar {
-    flex: 1;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-
-.value {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.label {
-    color: #ffffff;
-    font-size: 14px;
-}
-
-/* Hover effects */
-.control-btn:hover {
-    background-color: rgba(189, 189, 189, 0.5);
-}
-
-.btnes {
-      margin-left: auto;
-      background-color: #808080;
-      width: 60px;
-      height: 30px;
-      border: 1px solid #808080;
-      border-radius: 22px;
-      transition:ease-in-out 0.2s;
-    }
-    
-    .btnin {
-      border: 1px solid white;
-      border-radius: 50%;
-      background-color: white;
-      width: 30px;
-      height: 30px;
-      margin-right: 50px;
-      transition:ease-in-out 0.2s;
-    }
- 
-    .btnes:hover {
-      background-color: #32CD32;
-      width: 60px;
-      height: 30px;
-      border: 1px solid #808080;
-      border-radius: 22px;
-    }
-
-    .btnes:hover .btnin {
-      border: 1px solid white;
-      border-radius: 50%;
-      background-color: white;
-      width: 30px;
-      height: 30px;
-      margin-left: 30px;
-    }
-
-    progress-bar {
-	position: relative;
-	width: 500px;
-	height: 3em;
-	background-color: #111;
-	border-radius: 1.5em;
-	color: white;
-}
-
-.progress-bar::before {
-	content: attr(data-label);
-	display: flex;
-	align-items: center;
-	position: absolute;
-	left: .5em;
-	top: .5em;
-	bottom: .5em;
-	width: calc(var(--width, 0) * 1%);
-	min-width: 2rem;
-	max-width: calc(100% - 1em);
-	background-color: rgb(14, 187, 106);
-	border-radius: 1em;
-	padding: 1em;
-}
-
-
-
-/*_______End Middle Column___________*/
-/* Right Column */
-.right-column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.gauge-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.gauge {
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.skill {
-  width: 160px;
-  height: 160px;
-  position: relative;
-}
-
-.outer {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  /* border: 1px solid cornflowerblue; */
-  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
-    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
-  padding: 20px;
-}
-
-.inner {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  /* border: 1px solid cornflowerblue; */
-  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
-    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
-    -0.5px -0.5px 0 rgba(255, 255, 255, 1), 0.5px 0.5px 0 rgba(0, 0, 0, 0.15),
-    0px 12px 10px -10 rgba(0, 0, 0, 0.05);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#number {
-  font-weight: 600;
-  color: #555;
-}
-
-circle {
-  fill: none;
-  stroke: url(#GradientColor);
-  stroke-width: 20px;
-  stroke-dasharray: 472;
-  stroke-dashoffset: 472;
-  /* animation: anim 2s ease forwards; */
-}
-
-@keyframes anim {
-  100% {
-    stroke-dashoffset: 165.2;
-  }
-}
-
-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-h4 {
-    margin-bottom: 15px; /* Space below the title */
-}
-
-box
-{
-    position: relative;
-    margin: 50px;
-}
-.box .gauge-text
-{
-    position: relative;
-    /* top: 50%;
-    left: 50%; */
-    transform: translate(-50%,-50%);
-    text-align: center;
-    color: #fff;
-}
-.box .gauge-text h2
-{
-    font-size: 22px;
-    font-weight: 400;
-    letter-spacing: 1px;
-}
-.box .gauge-text small
-{
-    font-size: 18px;
-    display: block;
-}
-
-.circle
-{
-    width: 200px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.circle .points
-{
-    width: 3px;
-    height: 15px;
-    background: #0007;
-    position: absolute;
-    border-radius: 3px;
-    transform: rotate(calc(var(--i)*var(--rot))) translateY(-100px);
-    
-}
-.points.marked
-{
-    animation: glow 0.04s linear forwards;
-    animation-delay: calc(var(--i)*0.05s);
-}
-
-@keyframes glow
-{
-    0%
-    {
-        background: #0007;
-        box-shadow: none;
-    }
-    100%
-    {
-        background: var(--bgColor);
-        box-shadow: 0 0 10px var(--bgColor);
-    }
-}
-
-
-/*____________End Gauge_____________*/
-/* Giữ nguyên các style cho energy blocks của bạn */
 .energy-block {
+    width: 203.61px;
+    height: 222.22px;
     background:rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
     border-radius: 12px;
@@ -574,6 +197,8 @@ box
 }
 
 .energy-grid {
+    width: 467.22px;
+    height: 504.44px;
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2 cột */
     grid-template-rows: 1fr 1fr;    /* 2 hàng */
