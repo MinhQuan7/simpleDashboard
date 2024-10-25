@@ -55,8 +55,8 @@ body {
 }
 
 .energy-icon img {
-    width: 60px; /* Kích thước icon */
-    height: 60px;
+    width: 80px; /* Kích thước icon */
+    height: 80px;
 }
 .name-company {
     font-size: 20px;
@@ -247,33 +247,106 @@ body {
     border-radius: 10px;
 
 }
-
 .bar-container {
     display: flex;
-    flex-direction: column; /* Sắp xếp các hàng theo chiều dọc */
+    flex-direction: column; /* Arrange rows vertically */
 }
 
 .bar-row {
     display: flex;
-    align-items: center; /* Căn giữa thanh và nút nhấn */
-    margin-bottom: 10px; /* Khoảng cách giữa các hàng */
+    align-items: center; /* Center align bar and icon */
+    margin-bottom: 10px; /* Space between rows */
 }
 
 .bar {
-    width: 100%; /* Chiều rộng của thanh */
-    height: 40px; /* Chiều cao của thanh */
-    border-radius: 30px; /*Bo góc cho thanh */
-    position: relative; /* Để đặt phần trăm bên trong */
-    overflow: hidden; /* Đảm bảo phần trăm không ra ngoài thanh */
+    position: relative; /* Position for inner elements */
+    width: calc(100% - 34px); /* Full width minus icon space */
+    height: 40px; /* Height of the bar */
+    border-radius: 30px; /* Rounded corners for the bar */
+    overflow: hidden; /* Ensure inner elements stay within bounds */
 }
 
+.icon {
+    position: absolute; /* Position icon absolutely within the bar */
+    left: 10px; /* Adjusted to move it slightly to the right */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+}
+
+.icon img {
+    width: 30px; /* Set icon size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.progress {
+    height: 100%; /* Full height of the bar */
+}
+/*_________Bar 3__________*/
 .bar span {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%); /* Căn giữa phần trăm */
-    justify-items: center;
+    position: absolute;
+    left: calc(50% - 12px); /* Center the percentage text */
+    color: rgb(255, 255, 255); /* Text color for percentage */
+}
+
+.control-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(18, 18, 19, 0.3);
+    border-radius: 30px;
+    padding: 8px;
+}
+.icon-current {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    color: rgb(255, 255, 255); /* Màu chữ phần trăm */
+    width: 30px;
+    height: 30px;
+}
+
+.icon-current img {
+    width: 100%;
+    height: 100%; 
+    margin-right: 60px;
+    object-fit: contain;
+}
+.control-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-bar {
+    flex: 1;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.value {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.label {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* Hover effects */
+.control-btn:hover {
+    background-color: rgba(189, 189, 189, 0.5);
 }
 
 .btnes {
@@ -629,27 +702,12 @@ box
     color: #666;
 }
 
-/* Icon Placeholders */
-.icon {
-    background: #e0e0e0;
-    border: 1px dashed #999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    color: #666;
-}
 
 /* Text Styles */
 .value {
     font-size: 18px;
     font-weight: bold;
     margin: 5px 0;
-}
-
-.label {
-    font-size: 17px;
-    color: #000000;
 }
 
 .status {
