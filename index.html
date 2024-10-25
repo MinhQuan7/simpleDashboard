@@ -21,61 +21,61 @@
     <div class="dashboard-container">
         <!-- Năng lượng blocks -->
         <!-- <section class="left-column"> -->
-            <div class="energy-grid">
-                <!-- Hàng 1 -->
-                <div class="energy-block pv-energy">
-                    <div class="header-box pv-text">
-                        <h3>Năng lượng PV</h3>
-                    </div>
-                    <div class="energy-content">
-                        <p>Sản lượng hôm nay</p>
-                        <h3>20.2 kWh</h3>
-                    </div>
-                    <div class="energy-icon">
-                        <img src="assest/img/power.png" alt="PV Icon">
-                    </div>
+        <div class="energy-grid">
+            <!-- Hàng 1 -->
+            <div class="energy-block pv-energy">
+                <div class="header-box pv-text">
+                    <h3>Dòng Điện</h3>
                 </div>
-
-                <div class="energy-block discharge-energy">
-                    <div class="header-box discharge-text">
-                        <h3>Năng lượng xả</h3>
-                    </div>
-                    <div class="energy-content">
-                        <p>Xả hôm nay</p>
-                        <h3>2 kWh</h3>
-                    </div>
-                    <div class="energy-icon">
-                        <img src="assest/img/powerloss.png" alt="Discharge Icon">
-                    </div>
+                <div class="energy-content">
+                    <p class="current-id">Sản lượng hôm nay</p>
+                    <h3>A</h3>
                 </div>
-
-                <!-- Hàng 2 -->
-                <div class="energy-block charge-energy">
-                    <div class="header-box charge-header">
-                        <h3>Năng lượng đầy lưới</h3>
-                    </div>
-                    <div class="energy-content">
-                        <p>Đẩy lưới hôm nay</p>
-                        <h3>0 kWh</h3>
-                    </div>
-                    <div class="energy-icon">
-                        <img src="assest/img/solar.png" alt="">
-                    </div>
-                </div>
-
-                <div class="energy-block grid-energy">
-                    <div class="header-box grid-header">
-                        <h3>Năng lượng tiêu thụ</h3>
-                    </div>
-                    <div class="energy-content">
-                        <p>Tiêu thụ hôm nay</p>
-                        <h3>12.6 kWh</h3>
-                    </div>
-                    <div class="energy-icon">
-                        <img src="assest/img/onoff.png" alt="">
-                    </div>
+                <div class="energy-icon">
+                    <img src="assest/img/power.png" alt="PV Icon">
                 </div>
             </div>
+
+            <div class="energy-block discharge-energy">
+                <div class="header-box discharge-text">
+                    <h3>Điện Áp</h3>
+                </div>
+                <div class="energy-content">
+                    <p class="voltageId">Xả hôm nay</p>
+                    <h3>2 kWh</h3>
+                </div>
+                <div class="energy-icon">
+                    <img src="assest/img/powerloss.png" alt="Discharge Icon">
+                </div>
+            </div>
+
+            <!-- Hàng 2 -->
+            <div class="energy-block charge-energy">
+                <div class="header-box charge-header">
+                    <h3>Công suất tức thời</h3>
+                </div>
+                <div class="energy-content">
+                    <p>Đẩy lưới hôm nay</p>
+                    <h3>0 kWh</h3>
+                </div>
+                <div class="energy-icon">
+                    <img src="assest/img/solar.png" alt="">
+                </div>
+            </div>
+
+            <div class="energy-block grid-energy">
+                <div class="header-box grid-header">
+                    <h3>Công suất tiêu thụ</h3>
+                </div>
+                <div class="energy-content">
+                    <p>Tiêu thụ hôm nay</p>
+                    <h3>12.6 kWh</h3>
+                </div>
+                <div class="energy-icon">
+                    <img src="assest/img/onoff.png" alt="">
+                </div>
+            </div>
+        </div>
         <!-- </section> -->
         <!-- Sơ đồ năng lượng -->
         <section class="energy-diagram">
@@ -168,6 +168,7 @@
                 </span></div>
         </section>
     </div>
+    <script src="https://www.unpkg.com/@eohjsc/era-widget@1.1.3/src/index.js"></script>
     <script src="script.js"></script>
 </body>
 
